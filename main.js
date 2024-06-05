@@ -1,4 +1,12 @@
 const fs = require('fs');
 
-// TODO: Write the message "Hello, World!" to the file "output.txt"
+const message = 'Hello, World!';
+const fileName = 'output.txt';
 
+fs.writeFile(fileName, message, (err) => {
+  if (err) {
+    console.error('Error writing file:', err);
+  } else {
+    console.log(`Successfully wrote "${message}" to ${fileName}`);
+  }
+});
